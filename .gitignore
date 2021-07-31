@@ -1,0 +1,9 @@
+.vscode
+
+*.o
+
+main
+
+djikstra
+# add pycache
+# executables from c++

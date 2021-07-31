@@ -111,7 +111,8 @@ void VertexHeap::swap(int heapidx1, int heapidx2)
 	heapIdx2index[heapidx2] = heapIdx2index[heapidx1];
 
 	index2HeapIdx[heapIdx2index[heapidx1]] = heapidx2;
-	heapIdx2index[heapidx2] = temp;
+	// heapIdx2index[heapidx2] = temp;
+	heapIdx2index[heapidx1] = temp;
 
 	temp = heap[heapidx2];
 	heap[heapidx2] = heap[heapidx1];

@@ -1,4 +1,5 @@
 #include "argparse.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 int main(int argc, char** argv)
@@ -18,5 +19,6 @@ int main(int argc, char** argv)
 	if(result)
 		printf("Found J: %s\n", result);
 
+	free(result);
 	return 0;
 }

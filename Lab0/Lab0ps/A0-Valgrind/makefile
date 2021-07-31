@@ -11,4 +11,4 @@ clean:
 	rm *.o *.out *.exe ./main
 
 valgrind: ./main
-	valgrind valgrind --leak-check=full --show-leak-kinds=all ./main
+	valgrind valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./main

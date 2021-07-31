@@ -2,8 +2,8 @@
 #define __HEAP_H__
 
 #define HEAP_PARENT(i) ((i-1)/2) 
-#define HEAP_LEFT(i) (2*i)
-#define HEAP_RIGHT(i) (2*i+1)
+#define HEAP_LEFT(i) (2*i+1)
+#define HEAP_RIGHT(i) (2*i+2)
 
 #include <unordered_map>
 
