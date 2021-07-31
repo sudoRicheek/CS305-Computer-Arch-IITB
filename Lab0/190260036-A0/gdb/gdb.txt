@@ -1,0 +1,114 @@
++break 40
+Breakpoint 1 at 0x4688: file djikstra.cpp, line 42.
++r
+Starting program: /home/richeek/GitHub/CS305-OS-IITB/Lab0/Lab0ps/A0-GDB/djikstra 
+
+Breakpoint 1, Graph::Graph (this=0x7fffffffdc50, edges=...) at djikstra.cpp:42
+42		}
++print *vheap
+$1 = {index2HeapIdx = std::unordered_map with 9 elements = {[0] = 3, [1] = 7, [7] = 6, [2] = 5, [3] = 4, [8] = 1, 
+    [5] = 2, [4] = 0, [6] = 1}, heapIdx2index = std::unordered_map with 9 elements = {[8] = 0, [7] = 1, [6] = 7, [5] = 2, 
+    [4] = 3, [3] = 8, [2] = 5, [1] = 4, [0] = 6}, heap = 0x5555555734e0, capacity = 9, size = 9}
++source prettyprinters.py
++print *vheap
+$2 = 
+index2HeapIdx = std::unordered_map with 9 elements = {[0] = 3
+		 [1] = 7
+		 [7] = 6
+		 [2] = 5
+		 [3] = 4
+		 [8] = 1
+		 [5] = 2
+		 [4] = 0
+		 [6] = 1}
+heapIdx2index = std::unordered_map with 9 elements = {[8] = 0
+		 [7] = 1
+		 [6] = 7
+		 [5] = 2
+		 [4] = 3
+		 [3] = 8
+		 [2] = 5
+		 [1] = 4
+		 [0] = 6}
+heap = ['0', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647']
+prettier_heap ===> 
+						0		
+
+Quit
++print *vheap
+$3 = 
+index2HeapIdx = std::unordered_map with 9 elements = {[0] = 3
+		 [1] = 7
+		 [7] = 6
+		 [2] = 5
+		 [3] = 4
+		 [8] = 1
+		 [5] = 2
+		 [4] = 0
+		 [6] = 1}
+heapIdx2index = std::unordered_map with 9 elements = {[8] = 0
+		 [7] = 1
+		 [6] = 7
+		 [5] = 2
+		 [4] = 3
+		 [3] = 8
+		 [2] = 5
+		 [1] = 4
+		 [0] = 6}
+heap = ['0', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647', '2147483647']
+prettier_heap ===> 
+						0		
+
+				2147483647		2147483647		
+
+		2147483647		2147483647		2147483647		2147483647		
+
+2147483647		2147483647		
+
+
+capacity = 9
+size = 9
++b 49
+Breakpoint 2 at 0x555555558764: file djikstra.cpp, line 49.
++next
+main () at djikstra.cpp:110
+110		g.construct_spt();
++r
+Program not restarted.
++c
+Continuing.
+
+Breakpoint 2, Graph::construct_spt (this=0x7fffffffdc50) at djikstra.cpp:49
+49			while (!vheap->isEmpty())
++next
+51				auto[minNode, minDist] = vheap->popMin();
++step
+VertexHeap::popMin (
+    this=0x555555558c66 <std::__detail::_Node_iterator<std::pair<int const, std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, false, false>::operator++()+28>) at heap.cpp:35
+35	{
++b 54
+Breakpoint 3 at 0x555555555778: file heap.cpp, line 54.
++c
+Continuing.
+
+Breakpoint 3, VertexHeap::popMin (this=0x555555573450) at heap.cpp:54
+54		size--;
++step
+55		heapify(0);
++step
+VertexHeap::heapify (this=0x7fffffff55573488, heapidx=32767) at heap.cpp:89
+89	{
++b 93
+Breakpoint 4 at 0x555555555a70: file heap.cpp, line 93.
++c
+Continuing.
+
+Breakpoint 4, VertexHeap::heapify (this=0x555555573450, heapidx=0) at heap.cpp:93
+93		int smallest = heapidx;
++print l
+$4 = 0
++print r
+$5 = 1
++print heapidx
+$6 = 0
++q
