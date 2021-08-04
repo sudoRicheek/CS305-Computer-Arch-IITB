@@ -7,6 +7,10 @@
 
 struct argParser argParser;
 
+// Setup the function destruct() to run after main()
+// by default.
+void destruct(void) __attribute__((destructor));
+
 void initArgs()
 {
 	argParser.capacity = ARGCAP;
@@ -25,8 +29,6 @@ void addArg(char *name)
 
 	argParser.capacity += ARGCAP;
 	struct arg *tempArgs = malloc(sizeof(struct arg) * argParser.capacity);
-
-
 
 	for (int i = 0; i < argParser.len; i++)
 	{
@@ -76,6 +78,14 @@ char *getArg(char *name)
 		}
 	}
 
+	return retr;
+}
+
+// the piece of code below gets executed after main.
+// we free all the strdups and mallocs ever made.
+
+void destruct(void)
+{
 	for (int i = 0; i < argParser.len; i++)
 	{
 		if (argParser.argList[i].name)
@@ -84,6 +94,4 @@ char *getArg(char *name)
 			free(argParser.argList[i].result);
 	}
 	free(argParser.argList);
-
-	return retr;
 }
