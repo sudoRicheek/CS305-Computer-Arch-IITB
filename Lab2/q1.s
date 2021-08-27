@@ -14,6 +14,8 @@
 
     newline:
         .asciiz "\n"
+    doublenewline:
+        .asciiz "\n\n"
 
 .text
 
@@ -111,11 +113,7 @@
         syscall
         move $t2 $v0        # store character in $t2
 
-        la $a0 newline      # print the newline
-        li $v0 4
-        syscall
-
-        la $a0 newline      # print the newline
+        la $a0 doublenewline # print the newline
         li $v0 4
         syscall
 
