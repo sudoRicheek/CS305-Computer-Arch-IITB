@@ -1,0 +1,8 @@
+programs,bfs,matrix_multi,matrix_multi_2,quicksort
+baseline,0.001,0.001,0.001,0.001
+direct-mapped,55.085,2.761,0.690,0.021
+fully-associative,0.000,0.000,0.000,0.000
+reduced-size,0.004,0.056,0.055,0.000
+doubled-size,0.000,0.000,0.000,0.000
+reduced-mshr,0.000,0.000,0.000,0.000
+doubled-mshr,0.000,0.000,0.000,0.000

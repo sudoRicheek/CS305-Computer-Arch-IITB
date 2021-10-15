@@ -1,0 +1,8 @@
+programs,bfs,matrix_multi,matrix_multi_2,quicksort
+baseline,326.452,552.554,552.904,516.793
+direct-mapped,345.944,565.472,562.338,291.973
+fully-associative,321.577,549.231,549.231,252.771
+reduced-size,345.680,499.873,500.223,161.333
+doubled-size,582.822,873.443,876.367,500.611
+reduced-mshr,326.452,552.670,551.545,516.625
+doubled-mshr,326.420,553.371,552.982,516.647
